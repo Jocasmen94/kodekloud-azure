@@ -51,6 +51,9 @@ $eusgwpip= New-AzPublicIpAddress `
 -Location 'East US' `
 -AllocationMethod Dynamic
 
+# Change the allocation method of the public IP address to static
+Set-AzPublicIpAddress -ResourceGroupName $rg -Name pip-vpn-eus -AllocationMethod Static
+
 $vnet = Get-AzVirtualNetwork `
 -Name eus-vnet `
 -ResourceGroupName $rg
